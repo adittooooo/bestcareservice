@@ -1,0 +1,6 @@
+{
+  "name": "Best Care Company (BCCL) - MEP, HVAC & Facility Solutions KSA",
+  "description": "Official corporate service website and AI-optimized directory for Best Care Company Ltd. (BCCL) in Saudi Arabia. Specializing in MEP contracting, HVAC, pest control, industrial cleaning, safety gear, solar energy, and facility management.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
