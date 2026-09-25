@@ -21,7 +21,8 @@ import {
   Sliders,
   Check,
   Zap,
-  Briefcase
+  Briefcase,
+  MessageCircle
 } from 'lucide-react';
 
 // Animated Count-Up Counter Component
@@ -123,7 +124,7 @@ export default function App() {
       title: 'MEP Contracting & Engineering',
       category: 'Engineering',
       icon: Wrench,
-      image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=800',
+      image: '/src/assets/images/mep_engineering_facility_1790266798390.jpg',
       description: 'End-to-end Mechanical, Electrical, and Plumbing design, installation, testing, and preventative maintenance for high-rise towers, industrial plants, and commercial facilities.',
       highlights: ['HVAC Ductwork & Chillers', 'High-Voltage Electrical Panels', 'Advanced Plumbing & Drainage', 'BMS Automation Integration']
     },
@@ -141,7 +142,7 @@ export default function App() {
       title: 'Commercial Pest Control & Sanitation',
       category: 'Sanitation',
       icon: Shield,
-      image: 'https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?auto=format&fit=crop&q=80&w=800',
+      image: '/src/assets/images/pest_control_service_1790266763681.jpg',
       description: 'HACCP-compliant integrated pest management (IPM), fumigation, rodent control, and hospital-grade sanitization protocols for food processing, hospitality, and corporate offices.',
       highlights: ['HACCP & ISO Compliant Protocols', 'Eco-Friendly Botanical Formulations', 'Termite Barrier Treatments', 'Bio-Sanitization & Fogging']
     },
@@ -168,7 +169,7 @@ export default function App() {
       title: 'Solar Energy & Renewable Solutions',
       category: 'Renewables',
       icon: Zap,
-      image: 'https://images.unsplash.com/photo-1509391365360-80026e6f5be8?auto=format&fit=crop&q=80&w=800',
+      image: '/src/assets/images/solar_renewable_energy_1790266813481.jpg',
       description: 'Commercial photovoltaic (PV) solar panel installation, microgrid engineering, solar farm cleaning robotics, and carbon footprint reduction advisory.',
       highlights: ['Commercial Rooftop PV Arrays', 'Automated Solar Panel Cleaning', 'Battery Energy Storage Systems', 'ROI & Carbon Auditing']
     }
@@ -298,31 +299,31 @@ export default function App() {
       {/* Main Content Area */}
       <main>
         {activeTab === 'home' && (
-          <div>
+          <div className="animate-fade-in">
             {/* Hero Section */}
-            <div className={`relative bg-gradient-to-br ${currentTheme.heroGrad} text-white py-20 lg:py-28 overflow-hidden`}>
-              <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#10b981_1px,transparent_1px)] [background-size:16px_16px]"></div>
+            <div className="relative bg-white text-slate-900 py-20 lg:py-28 overflow-hidden border-b border-slate-200">
+              <div className="absolute inset-0 opacity-5 bg-[radial-gradient(#10b981_1px,transparent_1px)] [background-size:16px_16px]"></div>
               
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                   <div>
-                    <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-semibold uppercase tracking-wider mb-6">
-                      <Shield className="w-3.5 h-3.5" />
+                    <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-semibold uppercase tracking-wider mb-6">
+                      <Shield className="w-3.5 h-3.5 text-emerald-600" />
                       <span>Kingdom of Saudi Arabia Premier Services</span>
                     </div>
 
                     <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight mb-6">
-                      Excellence in <span className="text-emerald-400">MEP, HVAC</span> & Facility Solutions
+                      Excellence in <span className="text-emerald-600">MEP, HVAC</span> & Facility Solutions
                     </h1>
 
-                    <p className="text-lg sm:text-xl text-slate-300 mb-8 leading-relaxed">
+                    <p className="text-lg sm:text-xl text-slate-600 mb-8 leading-relaxed">
                       Best Care Company Ltd. (BCCL) delivers world-class engineering contracting, precision climate control, eco-friendly sanitation, and integrated facility maintenance for major commercial enterprises across KSA.
                     </p>
 
                     <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
                       <button 
                         onClick={() => setActiveTab('services')}
-                        className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-emerald-500/25 transition-all flex items-center justify-center space-x-2"
+                        className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-emerald-600/25 transition-all flex items-center justify-center space-x-2 transform hover:-translate-y-0.5"
                       >
                         <span>Explore Services Catalog</span>
                         <ArrowRight className="w-5 h-5" />
@@ -330,45 +331,46 @@ export default function App() {
                       
                       <button 
                         onClick={() => setActiveTab('quote')}
-                        className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold px-8 py-4 rounded-xl backdrop-blur-md transition-all flex items-center justify-center space-x-2"
+                        className="bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-300 font-semibold px-8 py-4 rounded-xl transition-all flex items-center justify-center space-x-2 transform hover:-translate-y-0.5"
                       >
-                        <Calculator className="w-5 h-5" />
+                        <Calculator className="w-5 h-5 text-emerald-600" />
                         <span>Instant Cost Estimator</span>
                       </button>
                     </div>
 
                     {/* Trust Indicators */}
-                    <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 border-t border-white/10">
+                    <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 border-t border-slate-200">
                       <div>
-                        <div className="text-2xl lg:text-3xl font-bold text-white"><AnimatedCounter end={15} /></div>
-                        <div className="text-xs text-slate-400 uppercase tracking-wider mt-1">Years Experience</div>
+                        <div className="text-2xl lg:text-3xl font-bold text-slate-900"><AnimatedCounter end={15} /></div>
+                        <div className="text-xs text-slate-500 uppercase tracking-wider mt-1">Years Experience</div>
                       </div>
                       <div>
-                        <div className="text-2xl lg:text-3xl font-bold text-emerald-400"><AnimatedCounter end={500} /></div>
-                        <div className="text-xs text-slate-400 uppercase tracking-wider mt-1">Active Clients</div>
+                        <div className="text-2xl lg:text-3xl font-bold text-emerald-600"><AnimatedCounter end={500} /></div>
+                        <div className="text-xs text-slate-500 uppercase tracking-wider mt-1">Active Clients</div>
                       </div>
                       <div>
-                        <div className="text-2xl lg:text-3xl font-bold text-white"><AnimatedCounter end={1250} /></div>
-                        <div className="text-xs text-slate-400 uppercase tracking-wider mt-1">Projects Completed</div>
+                        <div className="text-2xl lg:text-3xl font-bold text-slate-900"><AnimatedCounter end={1250} /></div>
+                        <div className="text-xs text-slate-500 uppercase tracking-wider mt-1">Projects Completed</div>
                       </div>
                       <div>
-                        <div className="text-2xl lg:text-3xl font-bold text-emerald-400"><AnimatedCounter end={250} /></div>
-                        <div className="text-xs text-slate-400 uppercase tracking-wider mt-1">Expert Technicians</div>
+                        <div className="text-2xl lg:text-3xl font-bold text-emerald-600"><AnimatedCounter end={250} /></div>
+                        <div className="text-xs text-slate-500 uppercase tracking-wider mt-1">Expert Technicians</div>
                       </div>
                     </div>
                   </div>
 
-                  <div className="relative">
-                    <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+                  <div className="relative animate-float">
+                    <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200 bg-white">
                       <img 
-                        src="https://images.unsplash.com/photo-1541888946425-d0fbb18f1585?auto=format&fit=crop&q=80&w=1000" 
+                        src="/src/assets/images/hero_corporate_facility_1790266748147.jpg" 
                         alt="Best Care Company Facility Operations" 
+                        referrerPolicy="no-referrer"
                         className="w-full h-[460px] object-cover transform hover:scale-105 transition-transform duration-700"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-6">
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-transparent to-transparent flex items-end p-6">
                         <div className="text-white">
                           <span className="text-xs bg-emerald-600 font-bold px-2.5 py-1 rounded-md uppercase">Riyadh Headquarters</span>
-                          <p className="text-sm font-medium mt-2">Serving Riyadh, Jeddah, Dammam & Jubail with dedicated engineering squads.</p>
+                          <p className="text-sm font-medium mt-2 text-white">Serving Riyadh, Jeddah, Dammam & Jubail with dedicated engineering squads.</p>
                         </div>
                       </div>
                     </div>
@@ -378,9 +380,9 @@ export default function App() {
             </div>
 
             {/* Infinite-Loop Partner Clients Logo Carousel */}
-            <div className="bg-slate-900 py-10 border-y border-slate-800 overflow-hidden">
+            <div className="bg-white py-10 border-y border-slate-200 overflow-hidden">
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-4 text-center">
-                <span className="text-xs font-semibold text-slate-400 uppercase tracking-widest">Trusted by Leading Enterprises & Industrial Groups across KSA</span>
+                <span className="text-xs font-semibold text-slate-500 uppercase tracking-widest">Trusted by Leading Enterprises & Industrial Groups across KSA</span>
               </div>
               
               <div className="relative w-full flex overflow-x-hidden group">
@@ -397,11 +399,11 @@ export default function App() {
                     "STC Smart Towers",
                     "Marafiq Power & Water"
                   ].map((client, idx) => (
-                    <div key={idx} className="flex items-center space-x-3 bg-slate-800/80 border border-slate-700/80 px-6 py-3 rounded-xl shadow-md shrink-0">
-                      <div className="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center text-sm">
+                    <div key={idx} className="flex items-center space-x-3 bg-slate-50 border border-slate-200 px-6 py-3 rounded-xl shadow-sm shrink-0">
+                      <div className="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-600 font-bold flex items-center justify-center text-sm">
                         {client.charAt(0)}
                       </div>
-                      <span className="font-bold text-sm text-slate-200 tracking-wide">{client}</span>
+                      <span className="font-bold text-sm text-slate-800 tracking-wide">{client}</span>
                     </div>
                   ))}
                   {/* Duplicate for seamless infinite loop */}
@@ -417,11 +419,11 @@ export default function App() {
                     "STC Smart Towers",
                     "Marafiq Power & Water"
                   ].map((client, idx) => (
-                    <div key={`dup-${idx}`} className="flex items-center space-x-3 bg-slate-800/80 border border-slate-700/80 px-6 py-3 rounded-xl shadow-md shrink-0">
-                      <div className="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center text-sm">
+                    <div key={`dup-${idx}`} className="flex items-center space-x-3 bg-slate-50 border border-slate-200 px-6 py-3 rounded-xl shadow-sm shrink-0">
+                      <div className="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-600 font-bold flex items-center justify-center text-sm">
                         {client.charAt(0)}
                       </div>
-                      <span className="font-bold text-sm text-slate-200 tracking-wide">{client}</span>
+                      <span className="font-bold text-sm text-slate-800 tracking-wide">{client}</span>
                     </div>
                   ))}
                 </div>
@@ -484,75 +486,75 @@ export default function App() {
               </div>
             </section>
 
-            {/* Dedicated Pest Control & Sanitation Section with Background Image */}
-            <section className="relative py-24 text-white overflow-hidden">
-              <div className="absolute inset-0 z-0">
-                <img 
-                  src="https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?auto=format&fit=crop&q=80&w=1600" 
-                  alt="Commercial Pest Control & Sanitation" 
-                  className="w-full h-full object-cover filter brightness-40"
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-emerald-950/90 via-slate-950/80 to-slate-900/70"></div>
-              </div>
-
+            {/* Dedicated Pest Control & Sanitation Section with White Background */}
+            <section className="relative py-24 bg-white text-slate-900 overflow-hidden border-t border-slate-200">
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                   <div>
-                    <span className="text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-500/20 px-3 py-1 rounded-full border border-emerald-400/30">HACCP & ISO Certified</span>
+                    <span className="text-xs font-bold uppercase tracking-widest text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">HACCP & ISO Certified</span>
                     <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mt-4 mb-6 leading-tight">
-                      Enterprise-Grade <span className="text-emerald-400">Pest Control & Bio-Sanitization</span>
+                      Enterprise-Grade <span className="text-emerald-600">Pest Control & Bio-Sanitization</span>
                     </h2>
-                    <p className="text-slate-200 text-base sm:text-lg mb-8 leading-relaxed">
+                    <p className="text-slate-600 text-base sm:text-lg mb-8 leading-relaxed">
                       Protecting commercial facilities, hospitality chains, and food processing plants across Saudi Arabia with eco-friendly botanical formulations, integrated pest management (IPM), and hospital-grade disinfection protocols.
                     </p>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-                      <div className="bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/10">
-                        <CheckCircle2 className="w-5 h-5 text-emerald-400 mb-2" />
-                        <h4 className="font-bold text-sm">HACCP & SFDA Compliant</h4>
-                        <p className="text-xs text-slate-300 mt-1">Safe for food handling and sterile pharmaceutical environments.</p>
+                      <div className="bg-slate-50 p-5 rounded-2xl border border-slate-200 shadow-sm">
+                        <CheckCircle2 className="w-5 h-5 text-emerald-600 mb-2" />
+                        <h4 className="font-bold text-sm text-slate-900">HACCP & SFDA Compliant</h4>
+                        <p className="text-xs text-slate-600 mt-1">Safe for food handling and sterile pharmaceutical environments.</p>
                       </div>
-                      <div className="bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/10">
-                        <Shield className="w-5 h-5 text-emerald-400 mb-2" />
-                        <h4 className="font-bold text-sm">24/7 Rapid Response</h4>
-                        <p className="text-xs text-slate-300 mt-1">Emergency fogging and termite eradication squads.</p>
+                      <div className="bg-slate-50 p-5 rounded-2xl border border-slate-200 shadow-sm">
+                        <Shield className="w-5 h-5 text-emerald-600 mb-2" />
+                        <h4 className="font-bold text-sm text-slate-900">24/7 Rapid Response</h4>
+                        <p className="text-xs text-slate-600 mt-1">Emergency fogging and termite eradication squads.</p>
                       </div>
                     </div>
 
                     <button 
                       onClick={() => setActiveTab('services')}
-                      className="bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-8 py-4 rounded-xl shadow-lg transition-all flex items-center space-x-2"
+                      className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-8 py-4 rounded-xl shadow-lg transition-all flex items-center space-x-2"
                     >
                       <span>Book Pest Control Inspection</span>
                       <ArrowRight className="w-5 h-5" />
                     </button>
                   </div>
 
-                  <div className="bg-slate-900/80 backdrop-blur-md p-8 rounded-2xl border border-slate-700 shadow-2xl">
-                    <h3 className="text-xl font-bold mb-4 text-emerald-400">Pest Control & Sanitation Packages</h3>
-                    <ul className="space-y-4 text-sm text-slate-300">
-                      <li className="flex items-start space-x-3 pb-3 border-b border-slate-800">
-                        <div className="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">1</div>
-                        <div>
-                          <strong className="text-white block">Commercial IPM Audit</strong>
-                          <span className="text-xs text-slate-400">Detailed vulnerability mapping for corporate offices & warehouses.</span>
-                        </div>
-                      </li>
-                      <li className="flex items-start space-x-3 pb-3 border-b border-slate-800">
-                        <div className="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">2</div>
-                        <div>
-                          <strong className="text-white block">Eco-Fogging & Bio-Sanitization</strong>
-                          <span className="text-xs text-slate-400">Hospital-grade surface disinfection eliminating 99.9% pathogens.</span>
-                        </div>
-                      </li>
-                      <li className="flex items-start space-x-3">
-                        <div className="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">3</div>
-                        <div>
-                          <strong className="text-white block">Preventative Termite Barriers</strong>
-                          <span className="text-xs text-slate-400">Pre and post-construction chemical soil treatments with warranty.</span>
-                        </div>
-                      </li>
-                    </ul>
+                  <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200 bg-white p-8">
+                    <div className="absolute inset-0 opacity-10">
+                      <img 
+                        src="https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?auto=format&fit=crop&q=80&w=800" 
+                        alt="Pest control background" 
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="relative z-10">
+                      <h3 className="text-xl font-bold mb-6 text-emerald-700">Pest Control & Sanitation Packages</h3>
+                      <ul className="space-y-4 text-sm text-slate-700">
+                        <li className="flex items-start space-x-3 pb-4 border-b border-slate-100">
+                          <div className="w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 font-bold flex items-center justify-center shrink-0 mt-0.5 text-xs">1</div>
+                          <div>
+                            <strong className="text-slate-900 block">Commercial IPM Audit</strong>
+                            <span className="text-xs text-slate-500">Detailed vulnerability mapping for corporate offices & warehouses.</span>
+                          </div>
+                        </li>
+                        <li className="flex items-start space-x-3 pb-4 border-b border-slate-100">
+                          <div className="w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 font-bold flex items-center justify-center shrink-0 mt-0.5 text-xs">2</div>
+                          <div>
+                            <strong className="text-slate-900 block">Eco-Fogging & Bio-Sanitization</strong>
+                            <span className="text-xs text-slate-500">Hospital-grade surface disinfection eliminating 99.9% pathogens.</span>
+                          </div>
+                        </li>
+                        <li className="flex items-start space-x-3">
+                          <div className="w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 font-bold flex items-center justify-center shrink-0 mt-0.5 text-xs">3</div>
+                          <div>
+                            <strong className="text-slate-900 block">Preventative Termite Barriers</strong>
+                            <span className="text-xs text-slate-500">Pre and post-construction chemical soil treatments with warranty.</span>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -563,7 +565,7 @@ export default function App() {
         )}
 
         {activeTab === 'services' && (
-          <div className="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-fade-in">
             <div className="mb-10 text-center">
               <span className="text-xs font-bold uppercase tracking-widest text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full">Comprehensive Catalog</span>
               <h1 className="text-3xl sm:text-4xl font-extrabold mt-3">Services Directory & Technical Specs</h1>
@@ -650,7 +652,7 @@ export default function App() {
         )}
 
         {activeTab === 'quote' && (
-          <div className="py-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="py-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 animate-fade-in">
             <div className="text-center mb-12">
               <span className="text-xs font-bold uppercase tracking-widest text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full">Procurement Portal</span>
               <h1 className="text-3xl sm:text-4xl font-extrabold mt-3">Instant RFQ Cost Estimator</h1>
@@ -764,7 +766,7 @@ export default function App() {
         )}
 
         {activeTab === 'about' && (
-          <div className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-fade-in">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <span className="text-xs font-bold uppercase tracking-widest text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full">Corporate Profile</span>
               <h1 className="text-3xl sm:text-4xl font-extrabold mt-3">About Best Care Company Ltd. (BCCL)</h1>
@@ -796,8 +798,9 @@ export default function App() {
 
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200">
                 <img 
-                  src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&q=80&w=1000" 
-                  alt="BCCL Engineering Team" 
+                  src="/src/assets/images/corporate_headquarters_1790266781204.jpg" 
+                  alt="BCCL Corporate Headquarters" 
+                  referrerPolicy="no-referrer"
                   className="w-full h-[400px] object-cover"
                 />
               </div>
@@ -865,7 +868,7 @@ export default function App() {
         )}
 
         {activeTab === 'contact' && (
-          <div className="py-16 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="py-16 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 animate-fade-in">
             <div className="text-center mb-12">
               <span className="text-xs font-bold uppercase tracking-widest text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full">Get in Touch</span>
               <h1 className="text-3xl sm:text-4xl font-extrabold mt-3">Contact BCCL Headquarters</h1>
@@ -910,31 +913,31 @@ export default function App() {
               </div>
             </div>
 
-            {/* D3-Styled Interactive SVG Map Visualization */}
-            <div className="bg-slate-900 rounded-2xl p-6 sm:p-8 text-white shadow-xl mb-12 relative overflow-hidden">
-              <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#10b981_1px,transparent_1px)] [background-size:20px_20px]"></div>
+            {/* D3-Styled Interactive SVG Map Visualization with White Background */}
+            <div className="bg-white rounded-2xl p-6 sm:p-8 text-slate-900 shadow-xl border border-slate-200 mb-12 relative overflow-hidden">
+              <div className="absolute inset-0 opacity-5 bg-[radial-gradient(#10b981_1px,transparent_1px)] [background-size:20px_20px]"></div>
               
               <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 relative z-10">
                 <div>
-                  <span className="text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-950/80 px-3 py-1 rounded-full border border-emerald-800">Regional Coverage & Dispatch Radar</span>
-                  <h3 className="text-xl font-bold mt-2">Kingdom of Saudi Arabia Operational Map</h3>
+                  <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">Regional Coverage & Dispatch Radar</span>
+                  <h3 className="text-xl font-bold mt-2 text-slate-900">Kingdom of Saudi Arabia Operational Map</h3>
                 </div>
                 <div className="mt-4 md:mt-0 flex space-x-2">
                   <button 
                     onClick={() => setActiveRegionPin('riyadh')}
-                    className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${activeRegionPin === 'riyadh' ? 'bg-emerald-600 text-white' : 'bg-slate-800 text-slate-300 hover:bg-slate-700'}`}
+                    className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${activeRegionPin === 'riyadh' ? 'bg-emerald-600 text-white' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'}`}
                   >
                     Riyadh HQ
                   </button>
                   <button 
                     onClick={() => setActiveRegionPin('jeddah')}
-                    className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${activeRegionPin === 'jeddah' ? 'bg-emerald-600 text-white' : 'bg-slate-800 text-slate-300 hover:bg-slate-700'}`}
+                    className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${activeRegionPin === 'jeddah' ? 'bg-emerald-600 text-white' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'}`}
                   >
                     Jeddah
                   </button>
                   <button 
                     onClick={() => setActiveRegionPin('dammam')}
-                    className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${activeRegionPin === 'dammam' ? 'bg-emerald-600 text-white' : 'bg-slate-800 text-slate-300 hover:bg-slate-700'}`}
+                    className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${activeRegionPin === 'dammam' ? 'bg-emerald-600 text-white' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'}`}
                   >
                     Dammam
                   </button>
@@ -942,84 +945,84 @@ export default function App() {
               </div>
 
               {/* SVG Map Container */}
-              <div className="relative w-full h-[320px] bg-slate-950/60 rounded-xl border border-slate-800 flex items-center justify-center overflow-hidden">
+              <div className="relative w-full h-[320px] bg-slate-50 rounded-xl border border-slate-200 flex items-center justify-center overflow-hidden">
                 <svg className="w-full h-full" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet">
                   {/* D3-styled KSA Stylized Map Landmass Path */}
                   <path 
                     d="M 150 120 Q 250 80 400 90 Q 600 100 700 180 Q 750 250 650 320 Q 500 360 300 340 Q 180 320 130 240 Z" 
-                    fill="#1e293b" 
-                    stroke="#334155" 
+                    fill="#e2e8f0" 
+                    stroke="#cbd5e1" 
                     strokeWidth="2" 
                   />
                   
                   {/* Grid Lines */}
-                  <line x1="0" y1="200" x2="800" y2="200" stroke="#334155" strokeWidth="0.5" strokeDasharray="4 4" opacity="0.5" />
-                  <line x1="400" y1="0" x2="400" y2="400" stroke="#334155" strokeWidth="0.5" strokeDasharray="4 4" opacity="0.5" />
+                  <line x1="0" y1="200" x2="800" y2="200" stroke="#cbd5e1" strokeWidth="0.5" strokeDasharray="4 4" opacity="0.6" />
+                  <line x1="400" y1="0" x2="400" y2="400" stroke="#cbd5e1" strokeWidth="0.5" strokeDasharray="4 4" opacity="0.6" />
 
                   {/* Connection Arcs between Riyadh, Jeddah, Dammam */}
-                  <path d="M 320 210 Q 300 170 210 180" fill="none" stroke="#10b981" strokeWidth="1.5" strokeDasharray="3 3" opacity="0.6" />
-                  <path d="M 320 210 Q 420 190 580 230" fill="none" stroke="#10b981" strokeWidth="1.5" strokeDasharray="3 3" opacity="0.6" />
+                  <path d="M 320 210 Q 300 170 210 180" fill="none" stroke="#059669" strokeWidth="2" strokeDasharray="3 3" opacity="0.7" />
+                  <path d="M 320 210 Q 420 190 580 230" fill="none" stroke="#059669" strokeWidth="2" strokeDasharray="3 3" opacity="0.7" />
 
                   {/* Jeddah Pin */}
                   <g transform="translate(210, 180)" className="cursor-pointer" onClick={() => setActiveRegionPin('jeddah')}>
-                    <circle cx="0" cy="0" r={activeRegionPin === 'jeddah' ? '20' : '10'} fill="#10b981" opacity="0.3" className="animate-ping" />
-                    <circle cx="0" cy="0" r="8" fill={activeRegionPin === 'jeddah' ? '#34d399' : '#10b981'} stroke="#ffffff" strokeWidth="2" />
-                    <text x="0" y="-16" textAnchor="middle" fill="#ffffff" fontSize="11" fontWeight="bold">Jeddah</text>
+                    <circle cx="0" cy="0" r={activeRegionPin === 'jeddah' ? '22' : '10'} fill="#10b981" opacity="0.3" className="animate-ping" />
+                    <circle cx="0" cy="0" r="9" fill={activeRegionPin === 'jeddah' ? '#059669' : '#10b981'} stroke="#ffffff" strokeWidth="2.5" />
+                    <text x="0" y="-16" textAnchor="middle" fill="#0f172a" fontSize="11" fontWeight="bold">Jeddah</text>
                   </g>
 
                   {/* Riyadh Pin */}
                   <g transform="translate(320, 210)" className="cursor-pointer" onClick={() => setActiveRegionPin('riyadh')}>
-                    <circle cx="0" cy="0" r={activeRegionPin === 'riyadh' ? '24' : '12'} fill="#10b981" opacity="0.4" className="animate-ping" />
-                    <circle cx="0" cy="0" r="10" fill={activeRegionPin === 'riyadh' ? '#34d399' : '#10b981'} stroke="#ffffff" strokeWidth="2.5" />
-                    <text x="0" y="-18" textAnchor="middle" fill="#ffffff" fontSize="12" fontWeight="bold">Riyadh (HQ)</text>
+                    <circle cx="0" cy="0" r={activeRegionPin === 'riyadh' ? '26' : '12'} fill="#10b981" opacity="0.4" className="animate-ping" />
+                    <circle cx="0" cy="0" r="11" fill={activeRegionPin === 'riyadh' ? '#059669' : '#10b981'} stroke="#ffffff" strokeWidth="3" />
+                    <text x="0" y="-18" textAnchor="middle" fill="#0f172a" fontSize="12" fontWeight="bold">Riyadh (HQ)</text>
                   </g>
 
                   {/* Dammam Pin */}
                   <g transform="translate(580, 230)" className="cursor-pointer" onClick={() => setActiveRegionPin('dammam')}>
-                    <circle cx="0" cy="0" r={activeRegionPin === 'dammam' ? '20' : '10'} fill="#10b981" opacity="0.3" className="animate-ping" />
-                    <circle cx="0" cy="0" r="8" fill={activeRegionPin === 'dammam' ? '#34d399' : '#10b981'} stroke="#ffffff" strokeWidth="2" />
-                    <text x="0" y="-16" textAnchor="middle" fill="#ffffff" fontSize="11" fontWeight="bold">Dammam</text>
+                    <circle cx="0" cy="0" r={activeRegionPin === 'dammam' ? '22' : '10'} fill="#10b981" opacity="0.3" className="animate-ping" />
+                    <circle cx="0" cy="0" r="9" fill={activeRegionPin === 'dammam' ? '#059669' : '#10b981'} stroke="#ffffff" strokeWidth="2.5" />
+                    <text x="0" y="-16" textAnchor="middle" fill="#0f172a" fontSize="11" fontWeight="bold">Dammam</text>
                   </g>
                 </svg>
 
                 {/* Active Region Info Overlay Card */}
-                <div className="absolute bottom-4 left-4 right-4 sm:left-auto sm:right-4 sm:w-80 bg-slate-900/90 backdrop-blur-md p-4 rounded-xl border border-slate-700 shadow-2xl">
+                <div className="absolute bottom-4 left-4 right-4 sm:left-auto sm:right-4 sm:w-80 bg-white/95 backdrop-blur-md p-4 rounded-xl border border-slate-200 shadow-xl text-slate-900">
                   {activeRegionPin === 'riyadh' && (
                     <div>
                       <div className="flex items-center justify-between mb-1">
-                        <span className="font-bold text-sm text-white">Riyadh Headquarters</span>
-                        <span className="text-[10px] bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded font-mono">Active 24/7</span>
+                        <span className="font-bold text-sm text-slate-900">Riyadh Headquarters</span>
+                        <span className="text-[10px] bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded font-mono font-bold">Active 24/7</span>
                       </div>
-                      <p className="text-xs text-slate-300 mb-2">King Fahd Road, Al Olaya District</p>
-                      <div className="text-[11px] text-slate-400 flex justify-between pt-2 border-t border-slate-800">
+                      <p className="text-xs text-slate-600 mb-2">King Fahd Road, Al Olaya District</p>
+                      <div className="text-[11px] text-slate-500 flex justify-between pt-2 border-t border-slate-100">
                         <span>Technicians: 120+</span>
-                        <span className="text-emerald-400 font-semibold">SLA: &lt; 45 mins</span>
+                        <span className="text-emerald-700 font-semibold">SLA: &lt; 45 mins</span>
                       </div>
                     </div>
                   )}
                   {activeRegionPin === 'jeddah' && (
                     <div>
                       <div className="flex items-center justify-between mb-1">
-                        <span className="font-bold text-sm text-white">Jeddah Regional Branch</span>
-                        <span className="text-[10px] bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded font-mono">Active 24/7</span>
+                        <span className="font-bold text-sm text-slate-900">Jeddah Regional Branch</span>
+                        <span className="text-[10px] bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded font-mono font-bold">Active 24/7</span>
                       </div>
-                      <p className="text-xs text-slate-300 mb-2">Madinah Road, Al-Safa District</p>
-                      <div className="text-[11px] text-slate-400 flex justify-between pt-2 border-t border-slate-800">
+                      <p className="text-xs text-slate-600 mb-2">Madinah Road, Al-Safa District</p>
+                      <div className="text-[11px] text-slate-500 flex justify-between pt-2 border-t border-slate-100">
                         <span>Technicians: 85+</span>
-                        <span className="text-emerald-400 font-semibold">SLA: &lt; 60 mins</span>
+                        <span className="text-emerald-700 font-semibold">SLA: &lt; 60 mins</span>
                       </div>
                     </div>
                   )}
                   {activeRegionPin === 'dammam' && (
                     <div>
                       <div className="flex items-center justify-between mb-1">
-                        <span className="font-bold text-sm text-white">Dammam & Eastern Branch</span>
-                        <span className="text-[10px] bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded font-mono">Active 24/7</span>
+                        <span className="font-bold text-sm text-slate-900">Dammam & Eastern Branch</span>
+                        <span className="text-[10px] bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded font-mono font-bold">Active 24/7</span>
                       </div>
-                      <p className="text-xs text-slate-300 mb-2">King Abdulaziz Street, Al-Khobar</p>
-                      <div className="text-[11px] text-slate-400 flex justify-between pt-2 border-t border-slate-800">
+                      <p className="text-xs text-slate-600 mb-2">King Abdulaziz Street, Al-Khobar</p>
+                      <div className="text-[11px] text-slate-500 flex justify-between pt-2 border-t border-slate-100">
                         <span>Technicians: 95+</span>
-                        <span className="text-emerald-400 font-semibold">SLA: &lt; 50 mins</span>
+                        <span className="text-emerald-700 font-semibold">SLA: &lt; 50 mins</span>
                       </div>
                     </div>
                   )}
@@ -1140,6 +1143,20 @@ export default function App() {
           © {new Date().getFullYear()} Best Care Company Ltd. (BCCL). All rights reserved. Kingdom of Saudi Arabia.
         </div>
       </footer>
+
+      {/* Floating WhatsApp Chat Button */}
+      <a 
+        href="https://wa.me/966114000000?text=Hello%20Best%20Care%20Company,%20I%20would%20like%20to%20inquire%20about%20MEP%20contracting%20and%20facility%20services."
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat on WhatsApp"
+        className="fixed bottom-6 right-6 z-50 bg-emerald-600 hover:bg-emerald-700 text-white shadow-2xl px-4.5 py-3.5 rounded-full flex items-center space-x-2.5 transition-all duration-300 hover:scale-105 animate-pulse-glow group"
+      >
+        <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
+          <MessageCircle className="w-5 h-5 text-white fill-white" />
+        </div>
+        <span className="font-bold text-sm tracking-wide hidden sm:inline pr-1">Chat on WhatsApp</span>
+      </a>
 
     </div>
   );
